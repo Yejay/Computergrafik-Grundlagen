@@ -1,0 +1,32 @@
+package cgg.a07;
+
+import cgtools.*;
+
+public interface Material {
+    /**
+     * Emissision how much light is emitted by the material
+     * 
+     * @param r - Ray
+     * @param h - Hit
+     * @return Color - Color of the material at the hit point of the ray
+     */
+    Color emission(Ray r, Hit h);
+
+    /**
+     * Albedo(= Weiße) (Maß für Rückstrahlvermögen, Reflexionsstrahlung) - proportion of light reflected by the material 
+     * 
+     * @param r - Ray
+     * @param h - Hit
+     * @return Color - Color of the material at the hit point of the ray
+     */
+    Color albedo(Ray r, Hit h);
+
+    /**
+     * Scattered ray from the material - the ray and its direction that is scattered from the material
+     * 
+     * @param r - Ray
+     * @param h - Hit
+     * @return Ray - Ray that is scattered from the hit point of the ray
+     */
+    Ray scattered(Ray r, Hit h);
+}
